@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carga de Fotos de Mascotas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Encabezado -->
+    <header class="header">
+        <h1>Carga de Fotos de tus Mascotas</h1>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="#premium">Premium</a></li>
+                <li><a href="#mi-album">Mi Álbum</a></li>
+                <li><a href="login.html">Iniciar Sesión</a></li>
+                <li class="hamburger-menu">
+                    <button onclick="toggleMenu()">☰</button>
+                    <div id="dropdown-menu" class="dropdown-content">
+                        <a href="#profile-settings">Configuración del Perfil</a>
+                        <a href="#logout">Cerrar Sesión</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <p>Comparte fotos adorables de tus amigos peludos</p>
+    </header>
+
+    <!-- Sección Principal de Carga -->
+    <main class="upload-section">
+        <h2>Sube una Foto de tu Mascota</h2>
+        <form class="upload-form" action="/upload" method="POST" enctype="multipart/form-data">
+            <label for="pet-name">Nombre de la Mascota:</label>
+            <input type="text" id="pet-name" name="pet-name" placeholder="Ejemplo: Max" required>
+
+            <label for="photo">Foto de la Mascota:</label>
+            <input type="file" id="photo" name="photo" accept="image/*" required>
+
+            <button type="submit" class="upload-button">Subir Foto</button>
+        </form>
+    </main>
+
+    <!-- Galería de Fotos -->
+    <section class="gallery">
+        <h2>Galería de Mascotas</h2>
+        <div class="photo-grid">
+            <!-- Ejemplo de tarjeta de foto cargada -->
+            <div class="photo-card">
+                <img src="./image/image4.jpg" alt="Foto de mascota">
+                <p>Nombre: Max</p>
+            </div>
+            <!-- Repetir photo-card para cada imagen subida -->
+        </div>
+    </section>
+
+    <!-- Pie de Página -->
+    <footer class="footer">
+        <p>© 2024 - Comparte tu amor por las mascotas</p>
+    </footer>
+
+    <script>
+        // Función para mostrar/ocultar el menú hamburguesa
+        function toggleMenu() {
+            const menu = document.getElementById('dropdown-menu');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>
